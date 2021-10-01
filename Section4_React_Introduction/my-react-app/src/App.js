@@ -1,30 +1,33 @@
-//import logo from './logo.svg';
-import './App.css';
+import Button from './Button.js'
 
-const styles2 =  {
-  boxShadow: '0 5px 3px  rgba(0,0,0,0.5)'
-}
+const arr = [
+  'Happy pig',
+  'Sad pig',
+  'Upset pig'
+]
 
-const styles = ({bg = '#222'}) => ({
-  backgroundColor: bg,
-  color:'#fff',
-  padding: '10px 15px',
-  margin: '10px 15px'
-})
-
-const Li  = ({ children, state }) => {
+const App = () => {
+  const myVar = false;
+  const mytry = true;
+  if(myVar){
+    return <p>Mi Variable dio true</p>
+  }
   return (
-    <li style={{...styles2, ...styles({bg:'#333'})}} className='clase-li'>{children} {state}</li>
+    <div>
+      <h1 onClick={(e) => console.log("Click", e)} >Hello world</h1>
+      {arr.map(el => <p key={el}>{el}</p>)}
+      {mytry?
+        <Button onClick={()=> console.log('clicked')}>
+          Send
+        </Button> 
+        :
+        <h1 onClick={(e) => console.log("Click", e)} >Hello world</h1>
+      }
+      
+    </div>
+    
   )
 }
 
-const App = () => {
-  const value = 'Sad'
-  return (
-    <ul style={styles({bg: '#750'})} className="clase-css">
-      <Li state="happy">Value of children</Li>
-    </ul>
-  );
-}
-
 export default App;
+
