@@ -11,12 +11,12 @@ const styles={
 
 export default class Products extends Component {
     render(){
-        const {products, addCart } = this.props
+        const {products, addToCart } = this.props
         return(
             <div style={ styles.products }>
                 {products.map(product => 
                     <Product
-                        addCart={addCart}
+                        addToCart={addToCart}
                         key={product.name}
                         product={product}
                     />

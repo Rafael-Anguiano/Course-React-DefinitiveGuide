@@ -16,14 +16,14 @@ const styles = {
 
 export default class Product extends Component {
     render() {
-        console.log(this.props)
-        const {product, addCart} = this.props
+        //console.log(this.props)
+        const {product, addToCart} = this.props
         return(
             <div style={styles.product}>
                 <img style={styles.img} alt={product.name} src={product.img}/>
                 <h3>{product.name}</h3>
                 <p> $ {product.price}</p>
-                <Button onClick={()=> addCart(product) } >
+                <Button onClick={()=> addToCart(product) } >
                     Add to Cart
                 </Button>
             </div>
